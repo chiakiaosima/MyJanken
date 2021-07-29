@@ -15,9 +15,14 @@ struct ContentView: View {
         //垂直にレイアウト（縦方向にレイアウト）
         VStack {
             
+            // スペースを追加
+            Spacer()
+            
             if answerNumber == 0 {
                 Text("これからジャンケンをします")
                 
+                // 可変に余白を設定
+                    .padding(.bottom)
             } else if answerNumber == 1 {
                 //ジャンケンの数字が1だったら、グー画像を指定
                 Image("gu")
@@ -25,9 +30,14 @@ struct ContentView: View {
                     .resizable()
                     //画面内に収まるように、アスペクト比(縦横比)を維持する指定
                     .aspectRatio(contentMode: .fit)
+                
+                // スペースを追加
+                Spacer()
                 //ジャンケンの種類を指定
                 Text("グー")
-                
+                    
+                    // 下辺に余白を設定
+                        .padding(.bottom)
             } else if answerNumber == 2 {
                 //ジャンケンの数字が2だったら、チョキ画像を指定
                 Image("choki")
@@ -35,8 +45,14 @@ struct ContentView: View {
                     .resizable()
                 //画面内に収まる様に、アスペクト比（縦横比）を維持する指定
                     .aspectRatio(contentMode: .fit)
+                
+                // スペースを追加
+                Spacer()
                 //ジャンケンの種類を指定
                 Text("チョキ")
+                
+                    // 下辺に余白を設定
+                        .padding(.bottom)
             } else {
                 //ジャンケンの数字が「1」と「2」以外だったら、パー画像を指定
                 Image("pa")
@@ -44,8 +60,14 @@ struct ContentView: View {
                     .resizable()
                 //画面内に収まる様に、アスペクト比（縦横比）を維持する指定
                     .aspectRatio(contentMode: .fit)
+                
+                // スペースを追加
+                Spacer()
                 //ジャンケンの種類を指定
                 Text("パー")
+                
+                    // 下辺に余白を設定
+                        .padding(.bottom)
             } //ifここまで
            
             
@@ -70,6 +92,11 @@ struct ContentView: View {
             }) {
                 //Buttonに表示する文字を指定
                 Text("ジャンケンをする！")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .background(Color.pink)
+                    .foregroundColor(Color.white)
             } //[ジャンケンをする]ボタン　ここまで
             
         } //VStackここまで
