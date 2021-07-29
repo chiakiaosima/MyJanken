@@ -51,8 +51,22 @@ struct ContentView: View {
             
             //[ジャンケンをする！]ボタン
             Button(action: {
-                //次のジャンケンへ
-                answerNumber = Int.random(in: 1...3)
+                //　新しいジャンケンの結果を一時的に格納する変数を設ける
+                var newAnsewrNumber = 0
+                
+                //　ランダムに結果を出すが、前回の結果と異なる場合のみ採用
+                // repeatは繰り返しを意味する
+                repeat {
+                    // 1,2,3の変数をランダムに算出（乱数）
+                    newAnsewrNumber = Int.random(in: 1...3)
+                    
+                    // 前回と同じ結果の時は、再度ランダムに数値を出す
+                    
+                    // 異なる結果の時は、repeatを抜ける
+                } while answerNumber == newAnsewrNumber
+                
+                // 新しいジャンケンの結果を格納
+                answerNumber = newAnsewrNumber
             }) {
                 //Buttonに表示する文字を指定
                 Text("ジャンケンをする！")
