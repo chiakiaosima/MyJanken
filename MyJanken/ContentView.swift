@@ -29,9 +29,24 @@ struct ContentView: View {
                 Text("グー")
                 
             } else if answerNumber == 2 {
-                
+                //ジャンケンの数字が2だったら、チョキ画像を指定
+                Image("choki")
+                //リサイズを指定
+                    .resizable()
+                //画面内に収まる様に、アスペクト比（縦横比）を維持する指定
+                    .aspectRatio(contentMode: .fit)
+                //ジャンケンの種類を指定
+                Text("チョキ")
             } else {
-            }
+                //ジャンケンの数字が「1」と「2」以外だったら、パー画像を指定
+                Image("pa")
+                //リサイズを指定
+                    .resizable()
+                //画面内に収まる様に、アスペクト比（縦横比）を維持する指定
+                    .aspectRatio(contentMode: .fit)
+                //ジャンケンの種類を指定
+                Text("パー")
+            } //ifここまで
            
             
             //[ジャンケンをする！]ボタン
